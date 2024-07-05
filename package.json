@@ -1,0 +1,38 @@
+{
+  "name": "@smolpack/sync-printful-to-shopify",
+  "version": "1.0.0",
+  "description": "Script to fetch Shopify meta objects, retrieve Printful catalog data by product ID, and update Shopify meta objects with mapped data.",
+  "main": "index.js",
+  "exports": "./index.ts",
+  "repository": "https://github.com/SmolSoftBoi/sync-printful-to-shopify.git",
+  "author": "Kristian Matthews-Kennington",
+  "private": true,
+  "dependencies": {
+    "@shopify/admin-api-client": "^1.0.0",
+    "@shopify/shopify-api": "^11.1.0",
+    "axios": "^1.7.2",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "shopify-api-node": "^3.13.2"
+  },
+  "devDependencies": {
+    "@shopify/api-codegen-preset": "^1.0.1",
+    "@smolpack/eslint-config": "^0.0.4",
+    "@smolpack/prettier-config": "^1.0.5",
+    "@typescript-eslint/eslint-plugin": "^7.15.0",
+    "@typescript-eslint/parser": "^7.15.0",
+    "eslint": "^8.5.7",
+    "eslint-config-typescript-sort-imports": "^2.28.1",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "typescript": "^5.5.3"
+  },
+  "scripts": {
+    "compile": "tsc",
+    "graphql-codegen": "graphql-codegen",
+    "lint": "eslint && prettier . --write",
+    "prepublish": "yarn compile && yarn graphql-codegen && yarn lint",
+    "start": "node ."
+  },
+  "prettier": "@smolpack/prettier-config"
+}
