@@ -200,7 +200,7 @@ const mapPrintfulProductToShopifyMetaobject = (
     fields: [
       {
         key: 'title',
-        value: printfulProduct.name.replace('|', '-'),
+        value: printfulProduct.name.replace(/\|/g, '-'),
       },
       {
         key: 'vendor',
